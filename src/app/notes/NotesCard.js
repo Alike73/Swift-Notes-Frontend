@@ -5,7 +5,7 @@ import ButtonsGroup from "../../components/notesCardButtonsComponents/ButtonsGro
 const NotesCard = () => {
 
     return (
-        <div className="card">
+        <div className="card mb-3">
             <div className="card-header">
             <span className="me-2">
                 <i className="bi bi-check-circle" />
