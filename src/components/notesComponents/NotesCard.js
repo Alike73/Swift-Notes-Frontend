@@ -1,4 +1,4 @@
-import ButtonsGroup from "../../components/notesCardButtonsComponents/ButtonsGroup";
+import ButtonsGroup from "./ButtonsGroup";
 
 
 

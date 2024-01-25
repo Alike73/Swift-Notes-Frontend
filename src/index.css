@@ -60,6 +60,30 @@ body {
   --transition-2: 250ms ease-in-out;
   --transition-3: 300ms ease-in-out;
 
-  --img-shadow-dark: drop-shadow(1px 2px 3px #2f3640);
+  --img-shadow-dark: drop-shadow(1px 2px 3px #000000);
+  --img-shadow-md: drop-shadow(1px 2px 1px #8d8282);
   --img-shadow-light: drop-shadow(1px 1px 2px #D7E2FE);
+  --img-shadow-lg: drop-shadow(1px 1px 1px #73f10b);
+}
+
+/* ---Scrollbar-Style--- */
+::-webkit-scrollbar {
+  width: 8px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+  background: #2B4865;
+
+}
+::-webkit-scrollbar-thumb {
+  background-image: linear-gradient(to top, #c79081 0%, #dfa579 100%);
+  background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
+  box-shadow: inset 2px 2px 5px 0 rgba(#fff, 0.5);
+  border-radius: 100px;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-image: linear-gradient(to top, #0ba360 0%, #3cba92 100%);
 }

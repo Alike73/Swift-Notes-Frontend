@@ -50,24 +50,77 @@
     margin-bottom: 30px;
 }
 
+.hero_text:first-letter {
+    font-size: 1.5em;
+    padding: 5px 10px;
+    margin-right: 5px; 
+    background: #EE9966;
+
+    background-image: linear-gradient(
+        90deg,
+        rgb(118, 167, 63) 0%,
+        rgb(51, 143, 118) 40%,
+        rgb(55, 141, 167) 50%,
+        rgb(117, 152, 242) 70%,
+        rgb(144, 118, 236) 100%
+    );
+    color: var(--invalid);
+    float: left;
+    border-radius: 50% 0;
+    font-weight: bold;
+    text-shadow: 0px 4px 3px 
+    rgb(0 0 0 / 40%), 0px 8px 13px 
+    rgb(0 0 0 / 10%), 0px 18px 23px 
+    rgb(0 0 0 / 10%);
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
 .hero_img_wrapper {
     position: relative;
 }
 
 .notes_count_box {
-    width: 40px;
-    height: 40px;
+    width: fit-content;
+    height: fit-content;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 50%;
     position: absolute;
-    top: 50%;
+    top: 65%;
     left: 55%;
     transform: translate(-50%, -50%);
+    transition: var(--transition-1);
+}
+.notes_count_box img {
+    width: 100%;
+    margin-top: var(--fs-24);
+    transform: rotate(210deg);
+    transition: var(--transition-2);
+}
+.notes_count_box:hover {
+    cursor: pointer;
+}
+.notes_count_box:hover img {
+    margin-top: var(--fs-18);
+    transform: rotate(230deg);
 }
 .notes_count_box :first-child {
     font-size: clamp(var( --fs-40), calc(var(--size) * 1.4), var(--fs-72));
+    font-family: "Nunito", sans-serif;
+    background: var(--invalid);
+    color: transparent;
+    background-size: contain;
+    background-clip: text;
+    -webkit-background-clip: text;
+    font-weight: 900;
+    text-shadow: 0px 4px 3px 
+    rgb(0 0 0 / 40%), 0px 8px 13px 
+    rgb(0 0 0 / 10%), 0px 18px 23px 
+    rgb(0 0 0 / 10%);
+}
+.notes_count_box :nth-child(2) {
+    font-size: clamp(var( --fs-24), calc(var(--size) * 1.2), var(--fs-48));
+    font-weight: 400;
     font-family: "Nunito", sans-serif;
     background-image: linear-gradient(
         90deg,
@@ -87,25 +140,15 @@
     rgb(0 0 0 / 10%), 0px 18px 23px 
     rgb(0 0 0 / 10%);
 }
-.notes_count_box :nth-child(2) {
-    font-size: clamp(var( --fs-24), calc(var(--size) * 1.2), var(--fs-48));
-    font-weight: 400;
-    font-family: "Nunito", sans-serif;
-    background: var(--invalid);
-    color: transparent;
-    background-size: contain;
-    background-clip: text;
-    -webkit-background-clip: text;
-    font-weight: 900;
-    text-shadow: 0px 4px 3px 
-    rgb(0 0 0 / 40%), 0px 8px 13px 
-    rgb(0 0 0 / 10%), 0px 18px 23px 
-    rgb(0 0 0 / 10%);
-}
 
 .swift_logo {
     width: 64px;
     margin: -50px 50px 0 0;
+    filter: var(--img-shadow-dark);
+}
+
+.just_arrow {
+    filter: var(--img-shadow-dark);
 }
 
 .hero_btn {
@@ -126,5 +169,8 @@
     .swift_logo {
         width: 32px;
         margin-top: -40px;
+    }
+    .notes_count_box img {
+        width: 60%;
     }
 }
