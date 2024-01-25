@@ -39,7 +39,7 @@ const EditorForm = () => {
                 <textarea className="form-control" id="message-text"></textarea>
             </div>
             <button type="submit" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#notes">
-                Save changes
+                Add note / Save changes
             </button>
         </form>
     )
