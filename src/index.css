@@ -43,6 +43,17 @@ body {
   --c-dark: hsl(210, 11%, 15%);
   --bg-body: hsl(0, 0%, 8%);
 
+  --fs-18: 1.125rem;
+  --fs-88: 5.5rem;
+  --fs-72: 4.5rem;
+  --fs-40: 2.5rem;
+  --fs-48: 3rem;
+  --fs-36: 2.25rem;
+  --fs-32: 2rem;
+  --fs-24: 1.5rem;
+  --fs-20: 1.25rem;
+  --fs-11: .7rem
+
   --transition-1: 125ms ease-in-out;
   --transition-2: 250ms ease-in-out;
   --transition-3: 300ms ease-in-out;
