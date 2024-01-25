@@ -34,7 +34,11 @@ const ButtonsGroup = () => {
                 >
                     <i className="bi bi-pencil-square" />
                 </button>
-                <button type="button" className="btn btn-sm btn-outline-secondary" onClick = { handleDelete }>
+                <button 
+                    type="button" 
+                    className="btn btn-sm btn-outline-secondary" 
+                    onClick = { handleDelete }
+                >
                     <i className="bi bi-trash3" />
                 </button>
             </div>
