@@ -2,6 +2,7 @@ import NotesCard from "./NotesCard";
 
 
 const Notes = () => {
+    
 
     return (
         <div className="modal fade" id="notes" tabIndex="-1" aria-labelledby="notesLabel" aria-hidden="true">
