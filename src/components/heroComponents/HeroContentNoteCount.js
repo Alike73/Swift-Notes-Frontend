@@ -4,7 +4,7 @@ const HeroContentNoteCount = () => {
 
     return (
         <div className="notes_count_box" title="view notes" data-bs-toggle="modal" data-bs-target="#notes">
-            <span>
+            <span title="total notes in your list">
                 15
             </span>
             <span>

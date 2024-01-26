@@ -1,4 +1,5 @@
 import NotesCard from "../../components/notesComponents/NotesCard";
+import NotesNavbar from "../../components/notesComponents/NotesNavbar";
 
 
 const Notes = () => {
@@ -9,17 +10,21 @@ const Notes = () => {
             <div className="modal-dialog modal-fullscreen modal-dialog-scrollable">
                 <div className="modal-content">
                     <div className="modal-header px-3 py-1">
-                        <div>
-                            <h3 className="modal-title fs-5" id="notesLabel">
+                        {/* <div>
+                            <h3 className="modal-title fs-5" id="notesLabel_1">
                                 <i className="bi bi-arrow-repeat me-2" />
                                 In progress: 15
                             </h3>
-                            <h3 className="modal-title fs-5" id="notesLabel">
+                            <h3 className="modal-title fs-5" id="notesLabel_2">
                                 <i className="bi bi-check-circle me-2" />
                                 Done: 7
                             </h3>
-                        </div>
-                        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div> */}
+                        {/* ---------------------- */}
+                        <NotesNavbar />
+                        {/* ---------------------- */}
+                        {/* <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" /> */}
+                        <i className="bi bi-x-square fs-2" data-bs-dismiss="modal" title="close list" />
                     </div>
                     <div className="modal-body">
                         <div className="container">
