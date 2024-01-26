@@ -26,7 +26,10 @@ const ButtonsGroup = () => {
 
     return (
         <div className="d-flex justify-content-between align-items-center">
-            <small className="text-muted">Date: 1/24/2024</small>
+        <div className="d-flex flex-column">
+            <small className="text-muted">Date: 1/24/2024 Time: 7:41 PM</small>
+            <small className="text-muted">Duration: 1d 3h</small>
+        </div>
             <div className="btn_wrapper">
                 <button 
                     type="button" 

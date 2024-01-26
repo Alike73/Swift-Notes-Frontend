@@ -15,13 +15,13 @@ const NotesNavbar = () => {
                         Done: 7
                     </p>
                 </div>
-                
+
                 <div className="btn-group mx-auto">
                     <button 
                     type="button" 
                     className="btn btn-outline-secondary dropdown-toggle" 
                     data-bs-toggle="dropdown" 
-                    data-bs-display="static" 
+                    data-bs-display="static"
                     aria-expanded="false"
                     title="choose your category"
                     >

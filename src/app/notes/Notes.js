@@ -1,5 +1,6 @@
 import NotesCard from "../../components/notesComponents/NotesCard";
 import NotesNavbar from "../../components/notesComponents/NotesNavbar";
+import SearchInput from "../../components/notesComponents/SearchInput";
 
 
 const Notes = () => {
@@ -24,10 +25,13 @@ const Notes = () => {
                         <NotesNavbar />
                         {/* ---------------------- */}
                         {/* <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" /> */}
-                        <i className="bi bi-x-square fs-2" data-bs-dismiss="modal" title="close list" />
+                        <i className="bi bi-x-square fs-1" data-bs-dismiss="modal" />
                     </div>
                     <div className="modal-body">
                         <div className="container">
+                        <div className="d-flex justify-content-center mb-3">
+                            <SearchInput />
+                        </div>
                             <NotesCard />
                             <NotesCard />
                             <NotesCard />

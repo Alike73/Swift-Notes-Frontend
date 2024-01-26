@@ -18,8 +18,11 @@ const NotesCard = () => {
                 <span className="me-2">1</span>
                 Special title treatment
                 </h5>
-                <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                {/* <a href="#abc" className="btn btn-primary">Go somewhere</a> */}
+                <p className="card-text border-bottom pb-2">
+                    With supporting text below as a natural lead-in to additional content.
+                    With supporting text below as a natural lead-in to additional content.
+                    With supporting text below as a natural lead-in to additional content.
+                </p>
                 <ButtonsGroup />
             </div>
         </div>
