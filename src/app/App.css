@@ -1,8 +1,18 @@
+.App {
+    background: rgb(67, 69, 112);
+    background: radial-gradient(
+        circle,
+        rgba(67, 69, 112, 1) 3%,
+        rgba(35, 36, 57, 1) 60%
+    );
+}
+
 .modal {
     transition: var(--transition-1);
 }
 .modal-header {
     background: var(--c-lilac);
+    border-bottom: none;
 }
 .bi-x-square {
     text-shadow: 0px 4px 3px 
@@ -25,7 +35,6 @@
 }
 
 
-
 .main {
     width: 100%;
     height: 100%;
@@ -33,12 +42,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgb(67, 69, 112);
-    background: radial-gradient(
-        circle,
-        rgba(67, 69, 112, 1) 3%,
-        rgba(35, 36, 57, 1) 60%
-    );
 }
 
 .title {
