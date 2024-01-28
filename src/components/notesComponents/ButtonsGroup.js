@@ -1,6 +1,6 @@
 import Swal from 'sweetalert2';
 
-const ButtonsGroup = () => {
+const ButtonsGroup = ({ updatingInInput, deleteNote, isDone }) => {
 
     const handleDelete = () => {
         Swal.fire({
@@ -13,6 +13,7 @@ const ButtonsGroup = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
         if (result.isConfirmed) {
+            deleteNote();
             Swal.fire({
             title: "Deleted!",
             text: "Your file has been deleted.",
@@ -36,6 +37,8 @@ const ButtonsGroup = () => {
                     className="btn btn-sm btn-outline-secondary me-2" 
                     data-bs-toggle="modal" 
                     data-bs-target="#editor"
+                    disabled={ isDone }
+                    onClick={ updatingInInput }
                 >
                     <i className="bi bi-pencil-square" />
                 </button>

@@ -214,17 +214,10 @@
     transform: translateY(-1px);
 }
 
-.bi-arrow-repeat {
-    display: inline-block;
-    animation: arrows-spin infinite 5s linear;
-}
-@keyframes arrows-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+/* ---Notes-Toggler-Btn--- */
+.note_toggler_btn {
+    border: none;
+    outline: none;
 }
 
 /* ---Search-Input--- */
@@ -289,7 +282,15 @@
     border-bottom: 3px solid #7e4fd4;
     transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
 }
-/* ------------------ */
+
+/* --------Notes-Card---------- */
+.card-title.done,
+.card-text.done {
+    text-decoration: line-through;
+    text-decoration-color: var(--c-label);
+}
+
+/* ---------------------------- */
 
 
 

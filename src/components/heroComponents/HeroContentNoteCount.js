@@ -1,11 +1,11 @@
 import arrow_img from '../../assets/images/1arrow.svg';
 
-const HeroContentNoteCount = () => {
+const HeroContentNoteCount = ({ myNotes }) => {
 
     return (
         <div className="notes_count_box" title="view notes" data-bs-toggle="modal" data-bs-target="#notes">
             <span title="total notes in your list">
-                15
+                { myNotes.length }
             </span>
             <span>
                 Notes

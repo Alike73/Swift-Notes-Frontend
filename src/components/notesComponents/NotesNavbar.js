@@ -1,6 +1,6 @@
 
 
-const NotesNavbar = () => {
+const NotesNavbar = ({ myNotes }) => {
 
     return (
         <nav className="navbar navbar-expand w-100">
