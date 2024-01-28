@@ -290,6 +290,17 @@
     text-decoration-color: var(--c-label);
 }
 
+.bi-arrow-repeat {
+    animation: arrow-spin infinite 10s linear;
+}
+@keyframes arrow-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
 /* ---------------------------- */
 
 
