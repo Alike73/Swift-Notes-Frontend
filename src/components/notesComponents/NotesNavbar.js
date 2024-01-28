@@ -1,19 +1,27 @@
+import { useSelector } from 'react-redux';
+import { getDoneNotesCount } from "../../Redux/NotesSlice";
 
 
 const NotesNavbar = ({ myNotes }) => {
 
+    const doneNotesCount = useSelector(getDoneNotesCount);
+    const totalNotes = myNotes.length;
+    const inProgress = totalNotes - doneNotesCount;
+
     return (
         <nav className="navbar navbar-expand w-100">
             <div className="container-fluid">
-                <div>
-                    <p className="modal-title text-light lead" id="notesLabel_1">
-                        <i className="bi bi-arrow-repeat me-2" />
-                        In progress: 15
-                    </p>
-                    <p className="modal-title text-light lead" id="notesLabel_2">
-                        <i className="bi bi-check-circle me-2" />
-                        Done: 7
-                    </p>
+                <div className="d-flex flex-column">
+                    <div>
+                        <i className="bi bi-check-circle text-info me-2" />
+                        <span className="text-light">Total notes: { totalNotes }</span>
+                    </div>
+                    <div>
+                        <span className="text-light">In progress: { inProgress }</span>
+                    </div>
+                    <div>
+                        <span className="text-light">Completed: { doneNotesCount }</span>
+                    </div>
                 </div>
 
                 <div className="btn-group mx-auto">
