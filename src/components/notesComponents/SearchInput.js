@@ -1,6 +1,15 @@
+import { useDispatch, useSelector } from "react-redux";
+import { getSearchTerm, setSearchTerm } from "../../Redux/SearchSlice";
 
 
 const SearchInput = () => {
+
+    const searchTerm = useSelector(getSearchTerm);
+    const dispatch = useDispatch();
+
+    const handleSearchTerm = (e) => {
+        dispatch(setSearchTerm(e.target.value))
+    }
 
     return (
         <div className="input-wrapper pt-3" title="search note by name">
@@ -10,7 +19,14 @@ const SearchInput = () => {
                 <path strokeLinejoin="round" strokeLinecap="round" strokeWidth="1.5" stroke="#fff" d="M22 22L20 20"></path>
                 </svg>
             </button>
-            <input placeholder="search note by name..." className="input" name="text" type="text" />
+            <input 
+                placeholder="search note by name..." 
+                className="input" 
+                name="text" 
+                type="text" 
+                value={searchTerm}
+                onChange={handleSearchTerm}
+            />
         </div>
     )
 };

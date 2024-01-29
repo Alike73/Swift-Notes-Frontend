@@ -291,6 +291,7 @@
 }
 
 .bi-arrow-repeat {
+    display: inline-block;
     animation: arrow-spin infinite 10s linear;
 }
 @keyframes arrow-spin {

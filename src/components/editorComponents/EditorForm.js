@@ -13,6 +13,7 @@ const EditorForm = ({ handleSubmit, title, setTitle, text, setText, editing }) =
                     className="form-control" 
                     id="note-title" 
                     value = { title }
+                    required={true}
                     onChange = { (e) => setTitle(e.target.value) }
                 />
             </div>
@@ -22,6 +23,7 @@ const EditorForm = ({ handleSubmit, title, setTitle, text, setText, editing }) =
                     className="form-control" 
                     id="note-text" 
                     value = { text }
+                    required={true}
                     onChange = { (e) => setText(e.target.value) }
                 />
             </div>

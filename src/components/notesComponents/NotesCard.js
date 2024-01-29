@@ -61,3 +61,6 @@ const NotesCard = ({ myNotes, index, noteTitle, noteText, updatingInInput, delet
 };
 
 export default NotesCard;
+
+
+

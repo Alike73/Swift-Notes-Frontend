@@ -1,15 +1,17 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { deleteNote } from "../../api/FetchNotes";
 import NotesCard from "../../components/notesComponents/NotesCard";
 import NotesNavbar from "../../components/notesComponents/NotesNavbar";
 import SearchInput from "../../components/notesComponents/SearchInput";
 import { useEffect } from "react";
 import { setDoneNotesCount } from "../../Redux/NotesSlice";
+import { getSearchTerm } from "../../Redux/SearchSlice";
 
 
 const Notes = ({ myNotes, setMyNotes, updatingInInput }) => {
 
     const dispatch = useDispatch();
+    const searchTerm = useSelector(getSearchTerm);
 
     useEffect(() => {
         const handleDoneNotesCount = () => {
@@ -22,8 +24,12 @@ const Notes = ({ myNotes, setMyNotes, updatingInInput }) => {
             });
             return count;
         };
-        // Dispatch setDoneNotesCount with a function as payload
-        dispatch(setDoneNotesCount(handleDoneNotesCount));
+    
+        // Calculate the count
+        const count = handleDoneNotesCount();
+    
+        // Dispatch setDoneNotesCount with the calculated count
+        dispatch(setDoneNotesCount(count));
     }, [myNotes, dispatch]);
     
 
@@ -43,16 +49,19 @@ const Notes = ({ myNotes, setMyNotes, updatingInInput }) => {
                         <div className="d-flex justify-content-center mb-3">
                             <SearchInput />
                         </div>
-                        { myNotes.map((note, index) => <NotesCard 
-                        key = { note._id }
-                        index={index + 1}
-                        noteTitle = { note.title } 
-                        noteText = { note.text }
-                        updatingInInput = {() => updatingInInput(note._id, note.title, note.text)}
-                        deleteNote = {() => deleteNote(note._id, setMyNotes)}
-
-                        myNotes = { myNotes }
-
+                        { myNotes
+                            .filter((note) => {
+                                if (searchTerm === '') return true;
+                                return note.title.toLowerCase().includes(searchTerm.toLowerCase());
+                            })
+                            .map((note, index) => <NotesCard 
+                            key = { note._id }
+                            index={index + 1}
+                            noteTitle = { note.title } 
+                            noteText = { note.text }
+                            updatingInInput = {() => updatingInInput(note._id, note.title, note.text)}
+                            deleteNote = {() => deleteNote(note._id, setMyNotes)}
+                            myNotes = { myNotes }
                         />)}
                             
                         </div>

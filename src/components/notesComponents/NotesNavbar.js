@@ -13,27 +13,32 @@ const NotesNavbar = ({ myNotes }) => {
             <div className="container-fluid">
                 <div className="d-flex flex-column">
                     <div>
-                        <i className="bi bi-check-circle text-info me-2" />
-                        <span className="text-light">Total notes: { totalNotes }</span>
+                        <i className="bi bi-arrow-repeat text-warning me-2" />
+                        <span className="text-light">In progress:</span>
+                        <span className='ms-2 text-warning fw-bold'>{ inProgress }</span>
                     </div>
                     <div>
-                        <span className="text-light">In progress: { inProgress }</span>
+                        <i className="bi bi-check2-circle text-danger me-2" />
+                        <span className="text-light">Completed:</span>
+                        <span className="ms-2 text-danger fw-bold">{ doneNotesCount }</span>
                     </div>
                     <div>
-                        <span className="text-light">Completed: { doneNotesCount }</span>
+                        <i className="bi bi-card-checklist text-light me-2" />
+                        <span className="text-light">Total notes:</span>
+                        <span className='ms-2 text-light fw-bold'>{ totalNotes }</span>
                     </div>
                 </div>
 
                 <div className="btn-group mx-auto">
                     <button 
                     type="button" 
-                    className="btn btn-outline-secondary dropdown-toggle" 
+                    className="btn btn-sm btn-outline-secondary dropdown-toggle" 
                     data-bs-toggle="dropdown" 
                     data-bs-display="static"
                     aria-expanded="false"
-                    title="choose your category"
+                    title="filter by category"
                     >
-                        Category
+                        CATEGORY
                     </button>
                     <ul className="dropdown-menu dropdown-menu-end dropdown-menu-lg-start">
                         <li><button className="dropdown-item active my-2" type="button">All</button></li>
