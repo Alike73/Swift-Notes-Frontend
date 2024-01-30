@@ -12,6 +12,7 @@ const Main = () => {
     const [myNotes, setMyNotes] = useState([]);
     const [title, setTitle] = useState("");
     const [text, setText] = useState("");
+    const [category, setCategory] = useState("");
     const [editing, setEditing] = useState(false);
     const [noteId, setNoteId] = useState("");
 
@@ -19,10 +20,11 @@ const Main = () => {
         getAllNotes(setMyNotes);
     }, []);
 
-    const updatingInInput = (_id, title, text) => {
+    const updatingInInput = (_id, title, text, category) => {
         setNoteId(_id)
         setTitle(title)
         setText(text)
+        setCategory(category)
         setEditing(true);
         
         // Setting a timeout ensures that the function goToTop executed before button edit becomes disabled
@@ -42,10 +44,10 @@ const Main = () => {
         }).then((result) => {
             if (result.isConfirmed) {
                 if(editing) {
-                    editNote(noteId, title, setTitle, text, setText, setMyNotes, setEditing)
+                    editNote(noteId, title, setTitle, text, setText, category, setCategory, setMyNotes, setEditing)
                 }
                 else {
-                    addNote(title, setTitle, text, setText, setMyNotes)
+                    addNote(title, setTitle, text, setText, category, setCategory, setMyNotes)
                 }
                 Swal.fire({
                     icon: "success",
@@ -72,6 +74,8 @@ const Main = () => {
                 setTitle = { setTitle } 
                 text = { text } 
                 setText = { setText }
+                category = { category }
+                setCategory = { setCategory }
                 editing = { editing } 
             />
             <Hero myNotes = { myNotes } />

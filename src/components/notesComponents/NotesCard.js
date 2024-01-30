@@ -6,34 +6,35 @@ import { setDoneNotesCount } from "../../Redux/NotesSlice";
 
 
 
-const NotesCard = ({ myNotes, index, noteTitle, noteText, updatingInInput, deleteNote }) => {
+const NotesCard = ({ myNotes, myNoteId, index, noteTitle, noteText, updatingInInput, deleteNote }) => {
 
     const dispatch = useDispatch();
     const [isDone, setIsDone] = useState(false);
 
     useEffect(() => {
         // Load isDone state from localStorage on component mount
-        const storedIsDone = localStorage.getItem(`note_${noteTitle}_isDone`);
+        const storedIsDone = localStorage.getItem(`note_${myNoteId}_isDone`);
         if (storedIsDone !== null) {
             setIsDone(JSON.parse(storedIsDone));
         }
-    }, [noteTitle]);
+    }, [myNoteId]);
 
     const handleToggleNote = () => {
         const newIsDone = !isDone;
         setIsDone(newIsDone);
 
         // Update localStorage with the new isDone value
-        localStorage.setItem(`note_${noteTitle}_isDone`, JSON.stringify(newIsDone));
+        localStorage.setItem(`note_${myNoteId}_isDone`, JSON.stringify(newIsDone));
 
         // Dispatch setDoneNotesCount with the updated count
         dispatch(setDoneNotesCount(handleDoneNotesCount()));
     };
+    
 
     const handleDoneNotesCount = () => {
         let count = 0;
         myNotes.forEach((note) => {
-            const storedIsDone = localStorage.getItem(`note_${note.title}_isDone`);
+            const storedIsDone = localStorage.getItem(`note_${note._id}_isDone`);
             if (storedIsDone !== null && JSON.parse(storedIsDone)) {
                 count++;
             }
@@ -43,7 +44,7 @@ const NotesCard = ({ myNotes, index, noteTitle, noteText, updatingInInput, delet
 
     return (
         <div className="card mb-3">
-            <div className={ `card-header bg-success-subtle ${ isDone ? "bg-warning-subtle" : "" } ` }>
+            <div className={ `card-header bg-success-subtle ${ isDone ? "bg-warning-subtle" : "" } ` } onClick={ handleToggleNote }>
                 <NotesToggle handleToggleNote = { handleToggleNote } isDone = { isDone } />
             </div>
             <div className="card-body">
@@ -54,7 +55,11 @@ const NotesCard = ({ myNotes, index, noteTitle, noteText, updatingInInput, delet
                 <p className={ `card-text border-bottom pb-2 ${ isDone ? "done" : "" }`}>
                     { noteText }
                 </p>
-                <ButtonsGroup updatingInInput = { updatingInInput } deleteNote = { deleteNote } isDone = { isDone } />
+                <ButtonsGroup 
+                    updatingInInput = { updatingInInput }
+                    deleteNote = { deleteNote } 
+                    isDone = { isDone }
+                />
             </div>
         </div>
     )

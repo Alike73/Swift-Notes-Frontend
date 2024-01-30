@@ -12,27 +12,29 @@ const getAllNotes = (setMyNotes) => {
 }
 
 // POST:
-const addNote = (title, setTitle, text, setText, setMyNotes) => {
-    axios.post(`${myURL}/saveNote`, { title, text })
+const addNote = (title, setTitle, text, setText, category, setCategory, setMyNotes) => {
+    axios.post(`${myURL}/saveNote`, { title, text, category })
     .then((data) => {
         console.log(data)
         setTitle("")
         setText("")
+        setCategory("")
         getAllNotes(setMyNotes)
     })
-}
+};
 
 // PUT:
-const editNote = (noteId, title, setTitle, text, setText, setMyNotes, setEditing) => {
-    axios.post(`${myURL}/editNote`, { _id: noteId, title, text })
+const editNote = (noteId, title, setTitle, text, setText, category, setCategory, setMyNotes, setEditing) => {
+    axios.post(`${myURL}/editNote`, { _id: noteId, title, text, category })
     .then((data) => {
         console.log(data)
         setTitle("")
         setText("")
+        setCategory("")
         setEditing(false)
         getAllNotes(setMyNotes)
     })
-}
+};
 
 const deleteNote = (_id, setMyNotes) => {
     axios.post(`${myURL}/deleteNote`, { _id })
@@ -40,6 +42,6 @@ const deleteNote = (_id, setMyNotes) => {
         console.log(data)
         getAllNotes(setMyNotes)
     })
-}
+};;
 
 export { getAllNotes, addNote, editNote, deleteNote };

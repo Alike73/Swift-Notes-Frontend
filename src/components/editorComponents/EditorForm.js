@@ -1,7 +1,7 @@
 
 
 
-const EditorForm = ({ handleSubmit, title, setTitle, text, setText, editing }) => {
+const EditorForm = ({ handleSubmit, title, setTitle, text, setText, category, setCategory, editing }) => {
     
     const btnText = editing ? "Save Note" : "Add New Note";
 
@@ -13,18 +13,26 @@ const EditorForm = ({ handleSubmit, title, setTitle, text, setText, editing }) =
                     className="form-control" 
                     id="note-title" 
                     value = { title }
-                    required={true}
                     onChange = { (e) => setTitle(e.target.value) }
                 />
             </div>
             <div className="mb-3">
-                <label htmlFor="note-text" className="col-form-label">Title:</label>
+                <label htmlFor="note-text" className="col-form-label">Note:</label>
                 <textarea 
                     className="form-control" 
                     id="note-text" 
                     value = { text }
-                    required={true}
                     onChange = { (e) => setText(e.target.value) }
+                />
+            </div>
+            <div className="mb-3">
+                <label htmlFor="category" className="col-form-label">Category:</label>
+                <input 
+                    type="text" 
+                    className="form-control" 
+                    id="category"
+                    value = { category }
+                    onChange = { (e) => setCategory(e.target.value.toUpperCase()) } 
                 />
             </div>
             <button 
@@ -32,7 +40,7 @@ const EditorForm = ({ handleSubmit, title, setTitle, text, setText, editing }) =
             className="btn btn-primary" 
             data-bs-toggle="modal" 
             data-bs-target="#notes"
-            disabled = { !title || !text }
+            disabled = { !title || !text || !category }
             >
                 { btnText }
             </button>

@@ -1,7 +1,7 @@
 import EditorForm from "../../components/editorComponents/EditorForm";
 
 
-const Editor = ({ handleSubmit, title, setTitle, text, setText, editing }) => {
+const Editor = ({ handleSubmit, title, setTitle, text, setText, category, setCategory, editing }) => {
 
     return (
         <div className="modal fade" id="editor" tabIndex="-1" aria-labelledby="editorLabel" aria-hidden="true">
@@ -18,6 +18,8 @@ const Editor = ({ handleSubmit, title, setTitle, text, setText, editing }) => {
                         setTitle = { setTitle } 
                         text = { text } 
                         setText = { setText }
+                        category = { category }
+                        setCategory = { setCategory }
                         editing = { editing }
                         />
                     </div>

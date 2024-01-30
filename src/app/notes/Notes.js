@@ -4,7 +4,7 @@ import NotesCard from "../../components/notesComponents/NotesCard";
 import NotesNavbar from "../../components/notesComponents/NotesNavbar";
 import SearchInput from "../../components/notesComponents/SearchInput";
 import { useEffect } from "react";
-import { setDoneNotesCount } from "../../Redux/NotesSlice";
+import { getSelectedCategory, setDoneNotesCount } from "../../Redux/NotesSlice";
 import { getSearchTerm } from "../../Redux/SearchSlice";
 
 
@@ -12,6 +12,7 @@ const Notes = ({ myNotes, setMyNotes, updatingInInput }) => {
 
     const dispatch = useDispatch();
     const searchTerm = useSelector(getSearchTerm);
+    const selectedCategory = useSelector(getSelectedCategory);
 
     useEffect(() => {
         const handleDoneNotesCount = () => {
@@ -24,10 +25,8 @@ const Notes = ({ myNotes, setMyNotes, updatingInInput }) => {
             });
             return count;
         };
-    
         // Calculate the count
         const count = handleDoneNotesCount();
-    
         // Dispatch setDoneNotesCount with the calculated count
         dispatch(setDoneNotesCount(count));
     }, [myNotes, dispatch]);
@@ -51,15 +50,20 @@ const Notes = ({ myNotes, setMyNotes, updatingInInput }) => {
                         </div>
                         { myNotes
                             .filter((note) => {
+                                if(selectedCategory === 'ALL') return true;
+                                return selectedCategory === note.category;
+                            })
+                            .filter((note) => {
                                 if (searchTerm === '') return true;
                                 return note.title.toLowerCase().includes(searchTerm.toLowerCase());
                             })
                             .map((note, index) => <NotesCard 
                             key = { note._id }
+                            myNoteId = { note._id }
                             index={index + 1}
                             noteTitle = { note.title } 
                             noteText = { note.text }
-                            updatingInInput = {() => updatingInInput(note._id, note.title, note.text)}
+                            updatingInInput = {() => updatingInInput(note._id, note.title, note.text, note.category, note.noteDate)}
                             deleteNote = {() => deleteNote(note._id, setMyNotes)}
                             myNotes = { myNotes }
                         />)}
