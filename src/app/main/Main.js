@@ -13,8 +13,8 @@ const Main = () => {
     const [title, setTitle] = useState("");
     const [text, setText] = useState("");
     const [category, setCategory] = useState("");
-    const [editing, setEditing] = useState(false);
     const [noteId, setNoteId] = useState("");
+    const [editing, setEditing] = useState(false);
 
     useEffect(() => {
         getAllNotes(setMyNotes);
@@ -78,7 +78,13 @@ const Main = () => {
                 setCategory = { setCategory }
                 editing = { editing } 
             />
-            <Hero myNotes = { myNotes } />
+            <Hero 
+                myNotes = { myNotes } 
+                setEditing = { setEditing }
+                setTitle = { setTitle } 
+                setText = { setText }
+                setCategory ={ setCategory }
+            />
         </div>
     )
 };

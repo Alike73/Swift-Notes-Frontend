@@ -17,7 +17,13 @@ const AllNotes = () => {
 
     return (
         <div className="dropdown">
-            <button className="btn btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <button 
+                className="btn btn-sm dropdown-toggle" 
+                type="button" 
+                data-bs-toggle="dropdown" 
+                aria-expanded="false"
+                title="choose your category"
+            >
                 Category
             </button>
             <ul className="dropdown-menu">

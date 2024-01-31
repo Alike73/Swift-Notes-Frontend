@@ -2,7 +2,7 @@ import HeroContentButtons from "./HeroContentButtons";
 
 
 
-const HeroContentText = () => {
+const HeroContentText = ({ setEditing, setTitle, setText, setCategory }) => {
     
     return (
         <div className="col-lg-6">
@@ -11,7 +11,12 @@ const HeroContentText = () => {
                 the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, 
                 responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.
             </p>
-            <HeroContentButtons />
+            <HeroContentButtons 
+            setEditing = { setEditing } 
+            setTitle = { setTitle }
+            setText = { setText }
+            setCategory = { setCategory }
+            />
         </div>
     )
 };

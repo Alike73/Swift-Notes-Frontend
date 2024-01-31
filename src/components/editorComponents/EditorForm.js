@@ -3,7 +3,7 @@
 
 const EditorForm = ({ handleSubmit, title, setTitle, text, setText, category, setCategory, editing }) => {
     
-    const btnText = editing ? "Save Note" : "Add New Note";
+    const btnText = editing ? "Save Your changes" : "Add New Note";
 
     return (
         <form onSubmit = { handleSubmit }>

@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { filterCategory, getSelectedCategory } from "../../../Redux/NotesSlice";
+import { setSearchTerm } from "../../../Redux/SearchSlice";
 
 
 const FilteredNote = ({ category }) => {
@@ -9,12 +10,13 @@ const FilteredNote = ({ category }) => {
 
     const handleFilterCategory = () => {
         dispatch(filterCategory(category))
+        dispatch(setSearchTerm(''))
     };
 
     return (
         <li>
             <button 
-            className={ selectedCategory === category ? "dropdown-item active" : "dropdown-item"} 
+            className={ selectedCategory === category ? "dropdown-item active my-2" : "dropdown-item my-2"} 
             type="button" 
             onClick = { handleFilterCategory }>
                 { category }

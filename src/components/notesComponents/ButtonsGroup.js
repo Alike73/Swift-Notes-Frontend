@@ -31,9 +31,10 @@ const ButtonsGroup = ({ updatingInInput, deleteNote, isDone }) => {
             <small className="text-muted">01/28/2024</small>
         </div>
             <div className="btn_wrapper">
-                <button 
+                <button
+                    title='Edit note' 
                     type="button" 
-                    className="btn btn-sm btn-outline-secondary me-2" 
+                    className="btn btn-sm btn-outline-success me-3" 
                     data-bs-toggle="modal" 
                     data-bs-target="#editor"
                     disabled={ isDone }
@@ -41,9 +42,10 @@ const ButtonsGroup = ({ updatingInInput, deleteNote, isDone }) => {
                 >
                     <i className="bi bi-pencil-square" />
                 </button>
-                <button 
+                <button
+                    title='Delete note'
                     type="button" 
-                    className="btn btn-sm btn-outline-secondary" 
+                    className="btn btn-sm btn-outline-danger" 
                     onClick = { handleDelete }
                 >
                     <i className="bi bi-trash3" />

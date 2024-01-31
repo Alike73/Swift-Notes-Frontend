@@ -6,9 +6,33 @@ import SearchInput from "../../components/notesComponents/SearchInput";
 import { useEffect } from "react";
 import { getSelectedCategory, setDoneNotesCount } from "../../Redux/NotesSlice";
 import { getSearchTerm } from "../../Redux/SearchSlice";
+import NotesWarningText from "../../components/notesComponents/NotesWarningText";
 
 
 const Notes = ({ myNotes, setMyNotes, updatingInInput }) => {
+
+    // const dispatch = useDispatch();
+    // const searchTerm = useSelector(getSearchTerm);
+    // const selectedCategory = useSelector(getSelectedCategory);
+
+    // useEffect(() => {
+    //     const handleDoneNotesCount = () => {
+    //         let count = 0;
+    //         myNotes.forEach((note) => {
+    //             const storedIsDone = localStorage.getItem(`note_${note.title}_isDone`);
+    //             if (storedIsDone !== null && JSON.parse(storedIsDone)) {
+    //                 count++;
+    //             }
+    //         });
+    //         return count;
+    //     };
+    //     // Calculate the count
+    //     const count = handleDoneNotesCount();
+    //     // Dispatch setDoneNotesCount with the calculated count
+    //     dispatch(setDoneNotesCount(count));
+    // }, [myNotes, dispatch]);
+
+
 
     const dispatch = useDispatch();
     const searchTerm = useSelector(getSearchTerm);
@@ -25,11 +49,21 @@ const Notes = ({ myNotes, setMyNotes, updatingInInput }) => {
             });
             return count;
         };
-        // Calculate the count
+
         const count = handleDoneNotesCount();
-        // Dispatch setDoneNotesCount with the calculated count
         dispatch(setDoneNotesCount(count));
     }, [myNotes, dispatch]);
+
+    // Filtered notes based on selected category and search term
+    const filteredNotes = myNotes
+        .filter((note) => {
+            if (selectedCategory === 'ALL') return true;
+            return selectedCategory === note.category;
+        })
+        .filter((note) => {
+            if (searchTerm === '') return true;
+            return note.title.toLowerCase().includes(searchTerm.toLowerCase());
+        });
     
 
     return (
@@ -43,12 +77,12 @@ const Notes = ({ myNotes, setMyNotes, updatingInInput }) => {
                         {/* <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" /> */}
                         <i className="bi bi-x-square fs-1" data-bs-dismiss="modal" />
                     </div>
-                    <div className="modal-body">
+                    <div className="modal-body notes_body_bg">
                         <div className="container">
                         <div className="d-flex justify-content-center mb-3">
                             <SearchInput />
                         </div>
-                        { myNotes
+                        {/* { myNotes
                             .filter((note) => {
                                 if(selectedCategory === 'ALL') return true;
                                 return selectedCategory === note.category;
@@ -66,8 +100,26 @@ const Notes = ({ myNotes, setMyNotes, updatingInInput }) => {
                             updatingInInput = {() => updatingInInput(note._id, note.title, note.text, note.category, note.noteDate)}
                             deleteNote = {() => deleteNote(note._id, setMyNotes)}
                             myNotes = { myNotes }
-                        />)}
-                            
+                        />)} */}
+
+                            {/* <h3>There is no such note or category!</h3> */}
+
+                            {filteredNotes.length === 0 ? (
+                                <NotesWarningText />
+                                ) : (
+                                    filteredNotes.map((note, index) => (
+                                        <NotesCard
+                                            key={note._id}
+                                            myNoteId={note._id}
+                                            index={index + 1}
+                                            noteTitle={note.title}
+                                            noteText={note.text}
+                                            updatingInInput={() => updatingInInput(note._id, note.title, note.text, note.category, note.noteDate)}
+                                            deleteNote={() => deleteNote(note._id, setMyNotes)}
+                                            myNotes={myNotes}
+                                        />
+                                    ))
+                                )}
                         </div>
                     </div>
                     {/* <div className="modal-footer">

@@ -16,17 +16,17 @@ const NotesNavbar = ({ myNotes }) => {
                     <div className='me-4'>
                         <i className="bi bi-arrow-repeat text-warning me-2" />
                         <span className="text-light">In progress:</span>
-                        <span className='ms-2 text-warning fw-bold'>{ inProgress }</span>
+                        <span className='ms-2 text-warning fw-bold fs-5'>{ inProgress }</span>
                     </div>
                     <div className='me-4'>
                         <i className="bi bi-check2-circle text-danger me-2" />
                         <span className="text-light">Completed:</span>
-                        <span className="ms-2 text-danger fw-bold">{ doneNotesCount }</span>
+                        <span className="ms-2 text-danger fw-bold fs-5">{ doneNotesCount }</span>
                     </div>
                     <div className='me-4'>
                         <i className="bi bi-card-checklist text-light me-2" />
                         <span className="text-light">Total notes:</span>
-                        <span className='ms-2 text-light fw-bold'>{ totalNotes }</span>
+                        <span className='ms-2 text-light fw-bold fs-5'>{ totalNotes }</span>
                     </div>
                     <div className="me-4">
                         <AllNotes />
