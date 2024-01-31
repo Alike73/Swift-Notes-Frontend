@@ -26,11 +26,6 @@ const Main = () => {
         setText(text)
         setCategory(category)
         setEditing(true);
-        
-        // Setting a timeout ensures that the function goToTop executed before button edit becomes disabled
-        // setTimeout(() => {
-        //     setEditing(true);
-        // }, 1500);
     }
 
     const handleSubmit = (e) => {

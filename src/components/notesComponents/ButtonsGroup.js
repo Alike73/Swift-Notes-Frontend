@@ -1,6 +1,9 @@
 import Swal from 'sweetalert2';
 
-const ButtonsGroup = ({ updatingInInput, deleteNote, isDone }) => {
+const ButtonsGroup = ({ updatingInInput, deleteNote, isDone, createdAt }) => {
+
+    const formattedDate = new Date(createdAt).toLocaleDateString();
+    const formattedTime = new Date(createdAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 
     const handleDelete = () => {
         Swal.fire({
@@ -28,7 +31,7 @@ const ButtonsGroup = ({ updatingInInput, deleteNote, isDone }) => {
     return (
         <div className="d-flex justify-content-between align-items-center">
         <div className="d-flex flex-column">
-            <small className="card_date">Created: 01/28/2024</small>
+            <small className="card_date">Created: { formattedDate } at { formattedTime }</small>
         </div>
             <div className="btn_wrapper">
                 <button

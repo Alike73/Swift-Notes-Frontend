@@ -11,29 +11,6 @@ import NotesWarningText from "../../components/notesComponents/NotesWarningText"
 
 const Notes = ({ myNotes, setMyNotes, updatingInInput }) => {
 
-    // const dispatch = useDispatch();
-    // const searchTerm = useSelector(getSearchTerm);
-    // const selectedCategory = useSelector(getSelectedCategory);
-
-    // useEffect(() => {
-    //     const handleDoneNotesCount = () => {
-    //         let count = 0;
-    //         myNotes.forEach((note) => {
-    //             const storedIsDone = localStorage.getItem(`note_${note.title}_isDone`);
-    //             if (storedIsDone !== null && JSON.parse(storedIsDone)) {
-    //                 count++;
-    //             }
-    //         });
-    //         return count;
-    //     };
-    //     // Calculate the count
-    //     const count = handleDoneNotesCount();
-    //     // Dispatch setDoneNotesCount with the calculated count
-    //     dispatch(setDoneNotesCount(count));
-    // }, [myNotes, dispatch]);
-
-
-
     const dispatch = useDispatch();
     const searchTerm = useSelector(getSearchTerm);
     const selectedCategory = useSelector(getSelectedCategory);
@@ -42,7 +19,7 @@ const Notes = ({ myNotes, setMyNotes, updatingInInput }) => {
         const handleDoneNotesCount = () => {
             let count = 0;
             myNotes.forEach((note) => {
-                const storedIsDone = localStorage.getItem(`note_${note.title}_isDone`);
+                const storedIsDone = localStorage.getItem(`note_${note._id}_isDone`);
                 if (storedIsDone !== null && JSON.parse(storedIsDone)) {
                     count++;
                 }
@@ -64,7 +41,6 @@ const Notes = ({ myNotes, setMyNotes, updatingInInput }) => {
             if (searchTerm === '') return true;
             return note.title.toLowerCase().includes(searchTerm.toLowerCase());
         });
-    
 
     return (
         <div className="modal fade" id="notes" tabIndex="-1" aria-labelledby="notesLabel" aria-hidden="true">
@@ -74,7 +50,6 @@ const Notes = ({ myNotes, setMyNotes, updatingInInput }) => {
                         <NotesNavbar 
                             myNotes = { myNotes }
                         />
-                        {/* <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" /> */}
                         <i className="bi bi-x-square fs-1" data-bs-dismiss="modal" />
                     </div>
                     <div className="modal-body notes_body_bg">
@@ -82,28 +57,6 @@ const Notes = ({ myNotes, setMyNotes, updatingInInput }) => {
                         <div className="d-flex justify-content-center mb-3">
                             <SearchInput />
                         </div>
-                        {/* { myNotes
-                            .filter((note) => {
-                                if(selectedCategory === 'ALL') return true;
-                                return selectedCategory === note.category;
-                            })
-                            .filter((note) => {
-                                if (searchTerm === '') return true;
-                                return note.title.toLowerCase().includes(searchTerm.toLowerCase());
-                            })
-                            .map((note, index) => <NotesCard 
-                            key = { note._id }
-                            myNoteId = { note._id }
-                            index={index + 1}
-                            noteTitle = { note.title } 
-                            noteText = { note.text }
-                            updatingInInput = {() => updatingInInput(note._id, note.title, note.text, note.category, note.noteDate)}
-                            deleteNote = {() => deleteNote(note._id, setMyNotes)}
-                            myNotes = { myNotes }
-                        />)} */}
-
-                            {/* <h3>There is no such note or category!</h3> */}
-
                             {filteredNotes.length === 0 ? (
                                 <NotesWarningText />
                                 ) : (
@@ -114,6 +67,7 @@ const Notes = ({ myNotes, setMyNotes, updatingInInput }) => {
                                             index={index + 1}
                                             noteTitle={note.title}
                                             noteText={note.text}
+                                            createdAt = { note.createdAt } 
                                             updatingInInput={() => updatingInInput(note._id, note.title, note.text, note.category, note.noteDate)}
                                             deleteNote={() => deleteNote(note._id, setMyNotes)}
                                             myNotes={myNotes}

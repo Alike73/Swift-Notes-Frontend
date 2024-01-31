@@ -13,7 +13,8 @@ const getAllNotes = (setMyNotes) => {
 
 // POST:
 const addNote = (title, setTitle, text, setText, category, setCategory, setMyNotes) => {
-    axios.post(`${myURL}/saveNote`, { title, text, category })
+    const createdAt = new Date();
+    axios.post(`${myURL}/saveNote`, { title, text, category, createdAt })
     .then((data) => {
         console.log(data)
         setTitle("")

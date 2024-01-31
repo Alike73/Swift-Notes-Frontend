@@ -6,7 +6,7 @@ import { setDoneNotesCount } from "../../Redux/NotesSlice";
 
 
 
-const NotesCard = ({ myNotes, myNoteId, index, noteTitle, noteText, updatingInInput, deleteNote }) => {
+const NotesCard = ({ myNotes, myNoteId, index, noteTitle, noteText, createdAt, updatingInInput, deleteNote }) => {
 
     const dispatch = useDispatch();
     const [isDone, setIsDone] = useState(false);
@@ -29,7 +29,6 @@ const NotesCard = ({ myNotes, myNoteId, index, noteTitle, noteText, updatingInIn
         // Dispatch setDoneNotesCount with the updated count
         dispatch(setDoneNotesCount(handleDoneNotesCount()));
     };
-    
 
     const handleDoneNotesCount = () => {
         let count = 0;
@@ -63,6 +62,7 @@ const NotesCard = ({ myNotes, myNoteId, index, noteTitle, noteText, updatingInIn
                     updatingInInput = { updatingInInput }
                     deleteNote = { deleteNote } 
                     isDone = { isDone }
+                    createdAt = { createdAt }
                 />
             </div>
         </div>
