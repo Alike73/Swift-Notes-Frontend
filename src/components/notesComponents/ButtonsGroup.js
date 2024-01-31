@@ -28,7 +28,7 @@ const ButtonsGroup = ({ updatingInInput, deleteNote, isDone }) => {
     return (
         <div className="d-flex justify-content-between align-items-center">
         <div className="d-flex flex-column">
-            <small className="text-muted">01/28/2024</small>
+            <small className="card_date">Created: 01/28/2024</small>
         </div>
             <div className="btn_wrapper">
                 <button

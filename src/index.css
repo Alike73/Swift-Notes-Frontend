@@ -38,13 +38,19 @@ body {
   --c-label: hsl(249, 6%, 58%);
   --c-label-2: hsl(249deg 10.94% 75.34%);
   --invalid: hsl(7, 100%, 68%);
+  --c-brown: hsl(18, 34%, 51%);
   --c-yellow: hsl(38, 98%, 64%);
   --c-red: hsl(346, 100%, 42%);
-  --c-lilac: hsl(260, 91%, 57%);
   --c-rose: hsl(278, 100%, 50%);
+  --c-lilac: hsl(260, 91%, 57%);
   --c-lilac-md: hsl(264, 100%, 50%);
+  --c-lilac-lg: hsl(264deg 100% 33.9%);
   --c-dark: hsl(210, 11%, 15%);
+  --c-dark-md: hsla(0,0%,100%,.5);
   --bg-body: hsl(0, 0%, 8%);
+  --c-bg-notes-body: hsl(234, 14%, 14%);
+  --c-bg-notes: hsl(220, 21%, 19%);
+  --notes-body-bg: url('./assets/images/pat-back.svg') center repeat;
 
   --fs-18: 1.125rem;
   --fs-88: 5.5rem;

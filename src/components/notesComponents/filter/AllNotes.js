@@ -24,7 +24,7 @@ const AllNotes = () => {
                 aria-expanded="false"
                 title="choose your category"
             >
-                Category
+                CATEGORY
             </button>
             <ul className="dropdown-menu">
                 {categories.map((category, index) => <FilteredNote 

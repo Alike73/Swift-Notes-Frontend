@@ -14,9 +14,9 @@ const NotesNavbar = ({ myNotes }) => {
             <div className="container-fluid">
                 <div className="d-flex flex-wrap">
                     <div className='me-4'>
-                        <i className="bi bi-arrow-repeat text-warning me-2" />
+                        <i className="bi bi-arrow-repeat text-info me-2" />
                         <span className="text-light">In progress:</span>
-                        <span className='ms-2 text-warning fw-bold fs-5'>{ inProgress }</span>
+                        <span className='ms-2 text-info fw-bold fs-5'>{ inProgress }</span>
                     </div>
                     <div className='me-4'>
                         <i className="bi bi-check2-circle text-danger me-2" />

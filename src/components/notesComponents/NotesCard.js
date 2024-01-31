@@ -45,7 +45,7 @@ const NotesCard = ({ myNotes, myNoteId, index, noteTitle, noteText, updatingInIn
     return (
         <div className="card mb-3">
             <div 
-            className={ `card-header bg-success-subtle ${ isDone ? "bg-warning-subtle" : "" } ` } 
+            className={ `card-header ${ isDone ? "done" : "" } ` } 
             onClick={ handleToggleNote }
             title="click me to set done"
             >
