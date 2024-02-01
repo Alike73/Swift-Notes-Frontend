@@ -4,6 +4,7 @@ import Swal from 'sweetalert2';
 import Editor from "../editor/Editor";
 import Hero from "../hero/Hero";
 import Notes from "../notes/Notes";
+import FAQs from '../faqs/FAQs';
 
 
 
@@ -58,6 +59,7 @@ const Main = () => {
 
     return (
         <div className="main">
+            <FAQs />
             <Notes 
                 myNotes = { myNotes } 
                 setMyNotes = { setMyNotes } 

@@ -85,7 +85,7 @@
     font-size: 1.2rem;
     color: var(--c-label-2);
     line-height: 1.5;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 .hero_text:first-letter {
@@ -115,6 +115,12 @@
 
 .hero_img_wrapper {
     position: relative;
+}
+
+.faqs_open_btn {
+    position: absolute;
+    top: 2%;
+    right: 2%;
 }
 
 .notes_count_box {
