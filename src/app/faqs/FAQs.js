@@ -8,16 +8,16 @@ const FAQs = () => {
             <div className="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
                 <div className="modal-content">
                     <div className="modal-header">
-                        <h2 className="modal-title fs-5" id="faqsLabel">Frequently asked questions</h2>
+                        <h2 className="modal-title fs-3" id="faqsLabel">Frequently asked questions</h2>
                         <i className="bi bi-x-square fs-1" data-bs-dismiss="modal" />
                     </div>
-                    <div className="modal-body">
+                    <div className="modal-body faqs_body">
                         <FAQsAccordion />
                     </div>
-                    <div className="modal-footer">
+                    {/* <div className="modal-footer">
                         <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                         <button type="button" className="btn btn-primary">Save changes</button>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div>

@@ -1,11 +1,11 @@
 import { useDispatch, useSelector } from "react-redux";
 import { deleteNote } from "../../api/FetchNotes";
-import NotesCard from "../../components/notesComponents/NotesCard";
-import NotesNavbar from "../../components/notesComponents/NotesNavbar";
-import SearchInput from "../../components/notesComponents/SearchInput";
 import { useEffect } from "react";
 import { getSelectedCategory, setDoneNotesCount } from "../../Redux/NotesSlice";
 import { getSearchTerm } from "../../Redux/SearchSlice";
+import NotesCard from "../../components/notesComponents/NotesCard";
+import NotesNavbar from "../../components/notesComponents/NotesNavbar";
+import SearchInput from "../../components/notesComponents/SearchInput";
 import NotesWarningText from "../../components/notesComponents/NotesWarningText";
 
 

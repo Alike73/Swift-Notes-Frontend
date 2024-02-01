@@ -10,11 +10,10 @@ const Editor = ({ handleSubmit, title, setTitle, text, setText, category, setCat
             <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                 <div className="modal-content">
                     <div className="modal-header">
-                        <h1 className="modal-title fs-5" id="editorLabel">{ titleText }</h1>
+                        <h2 className="modal-title fs-3" id="editorLabel">{ titleText }</h2>
                         <i className="bi bi-x-square fs-1" data-bs-dismiss="modal" />
-                        {/* <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> */}
                     </div>
-                    <div className="modal-body">
+                    <div className="modal-body editor_body px-2">
                         <EditorForm 
                         handleSubmit = { handleSubmit } 
                         title = { title } 
