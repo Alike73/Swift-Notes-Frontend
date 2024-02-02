@@ -14,11 +14,11 @@ const FilteredNote = ({ category }) => {
     };
 
     return (
-        <li>
+        <li className="my-2">
             <button 
-            className={ selectedCategory === category ? "dropdown-item active my-2" : "dropdown-item my-2"} 
-            type="button" 
-            onClick = { handleFilterCategory }>
+                className={ selectedCategory === category ? "dropdown-item active my-2" : "dropdown-item my-2"} 
+                type="button" 
+                onClick = { handleFilterCategory }>
                 { category }
             </button>
         </li>

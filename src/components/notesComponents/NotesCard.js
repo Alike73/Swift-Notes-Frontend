@@ -22,10 +22,8 @@ const NotesCard = ({ myNotes, myNoteId, index, noteTitle, noteText, createdAt, u
     const handleToggleNote = () => {
         const newIsDone = !isDone;
         setIsDone(newIsDone);
-
         // Update localStorage with the new isDone value
         localStorage.setItem(`note_${myNoteId}_isDone`, JSON.stringify(newIsDone));
-
         // Dispatch setDoneNotesCount with the updated count
         dispatch(setDoneNotesCount(handleDoneNotesCount()));
     };

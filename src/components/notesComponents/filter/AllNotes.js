@@ -3,7 +3,7 @@ import FilteredNote from "./FilteredNote";
 
 
 const AllNotes = () => {
-
+    
     const [categories] = useState([
         'ALL',
         'FAMILY', 

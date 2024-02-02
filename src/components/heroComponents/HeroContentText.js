@@ -5,8 +5,8 @@ const HeroContentText = ({ setEditing, setTitle, setText, setCategory }) => {
     return (
         <div className="col-lg-6">
             <p className="hero_text">
-                Quickly design and customize responsive mobile-first sites with Bootstrap, 
-                the world’s most popular front-end open source toolkit.
+                Empower Your Productivity with Create Your Swift Notes: An app for effortless note management. 
+                Seamlessly create, update, and delete your notes with intuitive user-friendly interface.
             </p>
             <HeroContentButtons 
             setEditing = { setEditing } 

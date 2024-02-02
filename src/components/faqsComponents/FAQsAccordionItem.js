@@ -20,7 +20,9 @@ const FAQsAccordionItem = ({
             </h2>
             <div id={ panelsId } className={ panels_class }>
                 <div className="accordion-body">
-                    { text }
+                    <p className="accordion_text">
+                        { text }
+                    </p>
                 </div>
             </div>
         </div>

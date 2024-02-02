@@ -1,9 +1,10 @@
 import dataSelect from '../../data/SelectData';
-import SelectItem from './SelectItem';
 
 const EditorForm = ({ handleSubmit, title, setTitle, text, setText, category, setCategory, editing }) => {
     
     const btnText = editing ? "Save Your changes" : "Add New Note";
+
+    console.log(category)
 
     return (
         <form className="myForm" onSubmit = { handleSubmit }>
@@ -32,13 +33,13 @@ const EditorForm = ({ handleSubmit, title, setTitle, text, setText, category, se
                     id="note-category" 
                     className="form-select" 
                     aria-label="Default select example"
-                    value = { category }
-                    onChange = { (e) => setCategory(e.target.value.toUpperCase()) }
+                    onChange = { (e) => setCategory(e.target.value) }
                 >
-                    { dataSelect.map((item) => <SelectItem 
-                        key = { item.id } 
-                        option_value = { item.option_value } 
-                    />)}
+                    {dataSelect.map((item) => (
+                        <option key={item.id} value={item.option_value}>
+                            {item.option_value}
+                        </option>
+                    ))}
                 </select>
             </div>
             <button 
