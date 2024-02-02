@@ -3,4 +3,4 @@
 # Swift Notes
 
 ## Used technologies:
-<img src="https://img.shields.io/badge/createreactapp-B8621B?style=for-the-badge&logo=createreactapp&logoColor=F6F1E9"/>
+![Static Badge](https://img.shields.io/badge/:badgeContent?style=flat&logo=react&logoColor=40A2E3&labelColor=474F7A)
