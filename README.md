@@ -3,4 +3,4 @@
 # Swift Notes
 
 ## Used technologies:
-<img src="https://img.shields.io/badge/createreactapp-B8621B?style=for-the-badge&logo=html5&logoColor=F6F1E9"/>
+<img src="https://img.shields.io/badge/createreactapp-B8621B?style=for-the-badge&logo=createreactapp&logoColor=F6F1E9"/>
