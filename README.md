@@ -3,6 +3,7 @@
 # Swift Notes
 
 [Link to Swift Notes](https://gaganpreetkaurkalsi.netlify.app/)
+![Scan this to see mobile view](./src/assets/images/swift-notes-qr-code.png)
 ___
 
 ## Used technologies:
