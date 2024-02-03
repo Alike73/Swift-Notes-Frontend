@@ -3,7 +3,11 @@
 # Swift Notes
 
 [Link to Swift Notes](https://gaganpreetkaurkalsi.netlify.app/)
-![Scan this to see mobile view](./src/assets/images/swift-notes-qr-code.png)
+___
+
+## Scan this QR-code to see the app on your mobile device:
+
+<img src="./src/assets/images/swift-notes-qr-code.png" alt="QR Code" width="100"/>
 ___
 
 ## Used technologies:
