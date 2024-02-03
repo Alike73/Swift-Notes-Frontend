@@ -8,6 +8,7 @@ ___
 ## Scan this QR-code to see the app on your mobile device:
 
 <img src="./src/assets/images/swift-notes-qr-code.png" alt="QR Code" width="100"/>
+
 ___
 
 ## Used technologies:
