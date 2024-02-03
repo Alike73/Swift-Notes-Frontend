@@ -53,7 +53,7 @@ const EditorForm = ({ handleSubmit, title, setTitle, text, setText, category, se
             </button>
             <div className='mt-3 form_warning_text_wrapper'>
                 {showWarning && (
-                    <span>
+                    <span className='form_warning_text'>
                         <i className="bi bi-asterisk me-1" />
                         <small className='text-secondary'>
                             To be able to save the note, please fill in all fields

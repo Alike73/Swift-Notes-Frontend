@@ -29,15 +29,15 @@ const ButtonsGroup = ({ updatingInInput, deleteNote, isDone, createdAt }) => {
     }
 
     return (
-        <div className="d-flex justify-content-between align-items-center">
-        <div className="d-flex flex-column">
+        <div className="d-flex justify-content-between align-items-center note-card-footer">
+        <div className="d-flex flex-column note-date-and-time">
             <small className="card_date">Created: { formattedDate } at { formattedTime }</small>
         </div>
             <div className="btn_wrapper">
                 <button
                     title='Edit note' 
                     type="button" 
-                    className="btn btn-sm btn-outline-success me-3" 
+                    className="btn btn-sm btn-outline-success me-3 edit-btn" 
                     data-bs-toggle="modal" 
                     data-bs-target="#editor"
                     disabled={ isDone }
@@ -48,7 +48,7 @@ const ButtonsGroup = ({ updatingInInput, deleteNote, isDone, createdAt }) => {
                 <button
                     title='Delete note'
                     type="button" 
-                    className="btn btn-sm btn-outline-danger" 
+                    className="btn btn-sm btn-outline-danger delete-btn" 
                     onClick = { handleDelete }
                 >
                     <i className="bi bi-trash3" />
