@@ -4,7 +4,7 @@ const EditorForm = ({ handleSubmit, title, setTitle, text, setText, category, se
     
     const btnText = editing ? "Save Your changes" : "Add New Note";
 
-    console.log(category)
+    const showWarning = !title.trim() || !text.trim();
 
     return (
         <form className="myForm" onSubmit = { handleSubmit }>
@@ -47,10 +47,21 @@ const EditorForm = ({ handleSubmit, title, setTitle, text, setText, category, se
                 className="btn btn-primary mt-3 form_btn" 
                 data-bs-toggle="modal" 
                 data-bs-target="#notes"
-                disabled = { !title || !text }
+                disabled = { !title || !text || !category }
             >
                 { btnText }
             </button>
+            <div className='mt-3 form_warning_text_wrapper'>
+                {showWarning && (
+                    <span>
+                        <i className="bi bi-asterisk me-1" />
+                        <small className='text-secondary'>
+                            To be able to save the note, please fill in all fields
+                        </small>
+                        <i className="bi bi-exclamation-lg text-secondary" />
+                    </span>
+                )}
+            </div>
         </form>
     )
 };
