@@ -16,7 +16,7 @@ ___
 ![Static Badge](https://img.shields.io/badge/redux-FE7A36?style=for-the-badge&logo=redux&logoColor=86B6F6&labelColor=424769)
 ![Static Badge](https://img.shields.io/badge/axios-FE7A36?style=for-the-badge&logo=axios&logoColor=F3F8FF&labelColor=424769)
 ![Static Badge](https://img.shields.io/badge/bootstrap-FE7A36?style=for-the-badge&logo=bootstrap&logoColor=C683D7&labelColor=424769)
-![Static Badge](https://img.shields.io/badge/greensock-FE7A36?style=for-the-badge&logo=greensock&logoColor=A1EEBD&labelColor=424769)
+![Static Badge](https://img.shields.io/badge/animista-FE7A36?style=for-the-badge&logo=rotaryinternational&logoColor=A1EEBD&labelColor=424769)
 ___
 
 ## What is this app for
