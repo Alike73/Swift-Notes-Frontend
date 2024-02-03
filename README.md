@@ -14,10 +14,6 @@ ___
 ## Used technologies:
 ![Static Badge](https://img.shields.io/badge/react-FE7A36?style=for-the-badge&logo=react&labelColor=424769)
 ![Static Badge](https://img.shields.io/badge/redux-FE7A36?style=for-the-badge&logo=redux&logoColor=86B6F6&labelColor=424769)
-![Static Badge](https://img.shields.io/badge/node.js-FE7A36?style=for-the-badge&logo=nodedotjs&logoColor=A1EEBD&labelColor=424769)
-![Static Badge](https://img.shields.io/badge/express-FE7A36?style=for-the-badge&logo=express&logoColor=F3F8FF&labelColor=424769)
-![Static Badge](https://img.shields.io/badge/mongodb-FE7A36?style=for-the-badge&logo=mongodb&logoColor=47A248&labelColor=424769)
-![Static Badge](https://img.shields.io/badge/mongoose-FE7A36?style=for-the-badge&logo=mongoose&logoColor=EF4040&labelColor=424769)
 ![Static Badge](https://img.shields.io/badge/axios-FE7A36?style=for-the-badge&logo=axios&logoColor=F3F8FF&labelColor=424769)
 ![Static Badge](https://img.shields.io/badge/bootstrap-FE7A36?style=for-the-badge&logo=bootstrap&logoColor=C683D7&labelColor=424769)
 ![Static Badge](https://img.shields.io/badge/greensock-FE7A36?style=for-the-badge&logo=greensock&logoColor=A1EEBD&labelColor=424769)
