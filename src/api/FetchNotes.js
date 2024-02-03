@@ -1,7 +1,9 @@
 
 import axios from 'axios';
 
-const myURL = 'http://localhost:4000';
+const myURL = 'https://swift-notes-backend.onrender.com';
+
+// http://localhost:4000
 
 // GET:
 const getAllNotes = (setMyNotes) => {
