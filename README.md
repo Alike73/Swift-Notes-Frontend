@@ -2,7 +2,7 @@
 
 # Swift Notes
 
-[Link to Swift Notes](https://gaganpreetkaurkalsi.netlify.app/)
+[Link to Swift Notes](https://ornate-marshmallow-650547.netlify.app)
 ___
 
 ## Scan this QR-code to see the app on your mobile device:
@@ -43,7 +43,7 @@ ___
 * Create folder on your local machine where you want to host the project (your-app-name).
 * Inside the folder (your-app-name) ***Clone*** or ***Download*** the repository Swift-Notes-frontend: `https://github.com/Alike73/Swift-Notes-Frontend.git` onto your local machine.
 * Open terminal and run: `npm install` to make sure all dependencies are installed.
-* Inside the folder (your-app-name) ***Clone*** or ***Download*** the repository [Swift-Notes-backend:](https://gaganpreetkaurkalsi.netlify.app/) `https://github.com/Alike73/Swift-Notes-Frontend.git`
+* Inside the folder (your-app-name) ***Clone*** or ***Download*** the repository [Swift-Notes-backend:](https://github.com/Alike73/Swift-Notes-Backend/tree/main) `https://github.com/Alike73/Swift-Notes-Backend.git`
 * Open terminal and run: `npm init -y` `npm install` to make sure all dependencies are installed.
 * Inside the package.json in the scripts write: `"start": "node server.js",` and `"dev": "nodemon server.js"`
 * Run your server: `node server.js` or `npm run dev`
